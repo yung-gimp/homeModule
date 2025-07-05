@@ -10,6 +10,7 @@
       url = "github:freedpom/FreedpomFormatter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
 
   outputs =
     inputs@{ flake-parts, ... }:
@@ -28,5 +29,4 @@
         };
       };
     };
-};
 }
