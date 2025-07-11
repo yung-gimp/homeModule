@@ -7,15 +7,34 @@
 
   programs = {
     home-manager.enable = true;
-    firefox.enable = true;
     foot.enable = true;
     git.enable = true;
-    neovim.enable = true;
     rofi.enable = true;
     nvf = {
       enable = true;
-      vim.vimAlias = true;
-      vim.lsp.enable = true;
+      settings = {
+        vim.vimAlias = true;
+        vim.lsp.enable = true;
+      };
+    };
+    firefox = {
+      enable = true;
+      profiles.default = {
+        settings = {
+          "extensions.autoDisableScopes" = 0;
+        };
+        extensions = {
+          force = true;
+          packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+            bitwarden
+            darkreader
+            ublock-origin
+          ];
+        };
+        policies = {
+
+        };
+      };
     };
   };
 

@@ -6,6 +6,7 @@
       "Music"
       "Pictures"
       "Videos"
+      ".mozilla"
     ];
     files = [ ];
     allowOther = false;
