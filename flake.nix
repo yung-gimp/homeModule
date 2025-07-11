@@ -1,22 +1,4 @@
 {
-  inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    impermanence.url = "github:nix-community/impermanence";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    fpFmt = {
-      url = "github:freedpom/FreedpomFormatter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
   outputs =
     inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -34,4 +16,27 @@
         };
       };
     };
+
+  inputs = {
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    fpFmt = {
+      url = "github:freedpom/FreedpomFormatter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    impermanence.url = "github:nix-community/impermanence";
+  };
 }

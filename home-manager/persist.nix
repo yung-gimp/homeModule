@@ -8,6 +8,6 @@
       "Videos"
     ];
     files = [ ];
-    #allowOther = true;
+    allowOther = false;
   };
 }
