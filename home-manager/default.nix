@@ -11,5 +11,6 @@
     inputs.nvf.homeManagerModules.default
     ./hyprland
     ./persist.nix
+    ./programs
   ];
 }
